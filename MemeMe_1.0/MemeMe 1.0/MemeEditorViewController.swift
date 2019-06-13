@@ -42,21 +42,20 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         unsubscribeFromKeyboardNotifications()
     }
    
-
     
     @IBAction func pickImageFromAlbum(_ sender: Any) {
-    let imagePicker = UIImagePickerController()
-    imagePicker.delegate = self
-    imagePicker.sourceType = .photoLibrary
-    imagePicker.allowsEditing = true
-    present(imagePicker, animated: true, completion: nil)
+        pickAnImage(.photoLibrary)
     }
     
     
     @IBAction func pickImageFromCamera(_ sender: Any) {
+        pickAnImage(.camera)
+    }
+    
+    func pickAnImage(_ source: UIImagePickerController.SourceType){
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = source
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
     }

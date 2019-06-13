@@ -37,7 +37,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem id="7lm-Ah-fbu">
-                                        <barButtonItem key="leftBarButtonItem" title="Share" id="m0f-9T-8gc">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="m0f-9T-8gc">
                                             <connections>
                                                 <action selector="shareMemedImage:" destination="BYZ-38-t0r" id="CNF-wQ-cja"/>
                                             </connections>
@@ -61,7 +61,7 @@
                                             <action selector="pickImageFromAlbum:" destination="BYZ-38-t0r" id="Mnw-Pu-uli"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Camera" id="8Mb-Zq-LJE">
+                                    <barButtonItem systemItem="camera" id="8Mb-Zq-LJE">
                                         <connections>
                                             <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" id="0E1-GA-XzB"/>
                                         </connections>
