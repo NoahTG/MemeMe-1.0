@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,23 +15,45 @@
             <objects>
                 <viewController title="MemeEditorViewController" id="BYZ-38-t0r" userLabel="Meme Editor View Controller" customClass="MemeEditorViewController" customModule="MemeMe_1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uyg-OZ-a6M">
-                                <rect key="frame" x="108" y="128" width="199" height="30"/>
+                                <rect key="frame" x="0.0" y="84" width="320" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TAX-rb-KNg">
-                                <rect key="frame" x="108" y="761" width="199" height="30"/>
+                                <rect key="frame" x="0.0" y="430" width="320" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5Q-iP-uZU">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Dob-Hd-qvV"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="7lm-Ah-fbu">
+                                        <barButtonItem key="leftBarButtonItem" title="Share" id="m0f-9T-8gc">
+                                            <connections>
+                                                <action selector="shareMemedImage:" destination="BYZ-38-t0r" id="CNF-wQ-cja"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="RwN-fx-2Zh"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vOi-cp-2QG" userLabel="Image Picker View">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7b-RM-0CZ">
-                                <rect key="frame" x="0.0" y="828" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="480" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="g0d-c3-3Fk"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="D7I-CL-gCv"/>
                                     <barButtonItem title="Photo" id="TgR-JF-9Oc" userLabel="Photo Button">
@@ -47,44 +69,25 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="nQn-ke-WU1"/>
                                 </items>
                             </toolbar>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5Q-iP-uZU">
-                                <rect key="frame" x="0.0" y="19" width="414" height="44"/>
-                                <items>
-                                    <navigationItem id="7lm-Ah-fbu">
-                                        <barButtonItem key="leftBarButtonItem" title="Share" id="m0f-9T-8gc">
-                                            <connections>
-                                                <action selector="shareMemedImage:" destination="BYZ-38-t0r" id="CNF-wQ-cja"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="RwN-fx-2Zh"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vOi-cp-2QG" userLabel="Image Picker View">
-                                <rect key="frame" x="0.0" y="63" width="414" height="750"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TAX-rb-KNg" secondAttribute="trailing" constant="107" id="2XS-Jc-KNV"/>
-                            <constraint firstItem="uyg-OZ-a6M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="84" id="3d8-NE-wsX"/>
-                            <constraint firstItem="TAX-rb-KNg" firstAttribute="top" secondItem="vOi-cp-2QG" secondAttribute="bottom" constant="45" id="9ci-yw-Qpv"/>
-                            <constraint firstItem="vOi-cp-2QG" firstAttribute="top" secondItem="uyg-OZ-a6M" secondAttribute="bottom" constant="23" id="EKT-O6-v3M"/>
-                            <constraint firstItem="TAX-rb-KNg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="108" id="S9V-Yp-irO"/>
-                            <constraint firstItem="p5Q-iP-uZU" firstAttribute="leading" secondItem="vOi-cp-2QG" secondAttribute="leading" id="SEp-4Q-ZLp"/>
-                            <constraint firstItem="uyg-OZ-a6M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="108" id="UF6-1Q-McG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uyg-OZ-a6M" secondAttribute="trailing" constant="107" id="VH2-eu-Ef9"/>
-                            <constraint firstItem="d7b-RM-0CZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="784" id="Yku-Cj-c0r"/>
-                            <constraint firstItem="p5Q-iP-uZU" firstAttribute="leading" secondItem="d7b-RM-0CZ" secondAttribute="leading" id="bPP-du-dE4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uyg-OZ-a6M" secondAttribute="trailing" constant="107" id="dkj-VG-vCy"/>
-                            <constraint firstItem="uyg-OZ-a6M" firstAttribute="top" secondItem="p5Q-iP-uZU" secondAttribute="bottom" constant="65" id="l5B-m5-QY3"/>
-                            <constraint firstItem="d7b-RM-0CZ" firstAttribute="top" secondItem="TAX-rb-KNg" secondAttribute="bottom" constant="37" id="sdC-yl-cY3"/>
-                            <constraint firstItem="p5Q-iP-uZU" firstAttribute="trailing" secondItem="d7b-RM-0CZ" secondAttribute="trailing" id="tAZ-j8-vy6"/>
-                            <constraint firstItem="d7b-RM-0CZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ttw-YE-iB2"/>
-                            <constraint firstItem="uyg-OZ-a6M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="108" id="vlB-Kh-7Is"/>
-                            <constraint firstAttribute="bottom" secondItem="d7b-RM-0CZ" secondAttribute="bottom" constant="24" id="xWI-V4-Vae"/>
-                            <constraint firstItem="p5Q-iP-uZU" firstAttribute="trailing" secondItem="vOi-cp-2QG" secondAttribute="trailing" id="yga-V3-oeY"/>
-                            <constraint firstItem="d7b-RM-0CZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="z5h-j3-TC7"/>
+                            <constraint firstItem="d7b-RM-0CZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6p3-Mp-6F2"/>
+                            <constraint firstItem="d7b-RM-0CZ" firstAttribute="top" secondItem="vOi-cp-2QG" secondAttribute="bottom" id="Bey-vd-6lG"/>
+                            <constraint firstItem="d7b-RM-0CZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="MYe-Tj-ZaC"/>
+                            <constraint firstItem="uyg-OZ-a6M" firstAttribute="top" secondItem="p5Q-iP-uZU" secondAttribute="bottom" constant="20" id="P6m-XP-Kw5"/>
+                            <constraint firstItem="d7b-RM-0CZ" firstAttribute="top" secondItem="TAX-rb-KNg" secondAttribute="bottom" constant="20" id="PlC-di-Kr6"/>
+                            <constraint firstItem="d7b-RM-0CZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bRg-h6-KbJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uyg-OZ-a6M" secondAttribute="trailing" id="eMs-sl-ew6"/>
+                            <constraint firstItem="vOi-cp-2QG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ePm-Zw-AFf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TAX-rb-KNg" secondAttribute="trailing" id="jUw-Ch-5RQ"/>
+                            <constraint firstItem="vOi-cp-2QG" firstAttribute="top" secondItem="p5Q-iP-uZU" secondAttribute="bottom" id="lMu-5D-iTD"/>
+                            <constraint firstItem="vOi-cp-2QG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lfZ-d5-2zz"/>
+                            <constraint firstItem="p5Q-iP-uZU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rv3-aW-4vu"/>
+                            <constraint firstItem="uyg-OZ-a6M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tNF-vz-GBA"/>
+                            <constraint firstItem="p5Q-iP-uZU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vii-Ep-arA"/>
+                            <constraint firstItem="p5Q-iP-uZU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xq9-4b-taD"/>
+                            <constraint firstItem="TAX-rb-KNg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yDa-HW-zNy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
