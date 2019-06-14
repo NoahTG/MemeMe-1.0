@@ -6,6 +6,8 @@
 //  Copyright © 2019 NTG. All rights reserved.
 //
 
+// alignemnt not centered
+
 import UIKit
 import Foundation
 
@@ -27,7 +29,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startTextField()
+        startTextField(topTextField, "TOP")
+        startTextField(bottomTextField, "BOTTOM")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,29 +90,22 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         present(activityVC, animated: true, completion: nil)
     }
     
-    
-    
     // TEXT
     
     //ready text fields
-    func startTextField(){
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+    func startTextField(_ textField: UITextField,_ text: String){
+        textField.text = text
+        textField.delegate = self
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
     }
-    
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth: -2
+        NSAttributedString.Key.strokeWidth: -4
     ]
-    
-    
     
     // move screen op
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -121,9 +117,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     // move screen down
     @objc func keyboardWillHide(_ notification: Notification) {
-        if view.frame.origin.y != 0 {
-            view.frame.origin.y += getKeyboardHeight(notification)
-        }
+        view.frame.origin.y = 0
     }
     
     
@@ -150,6 +144,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
             textField.text = ""
         }
     }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
