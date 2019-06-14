@@ -6,14 +6,11 @@
 //  Copyright © 2019 NTG. All rights reserved.
 //
 
-// alignemnt not centered
-
 import UIKit
 import Foundation
 
 class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate {
-    
     
     // Outlets
     
@@ -65,13 +62,13 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            ImagePickerView.image = image
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+                ImagePickerView.image = image
+            } else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                ImagePickerView.image = image
         }
-        
         dismiss(animated: true, completion: nil)
     }
-    
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
